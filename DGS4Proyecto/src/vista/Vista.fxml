@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="663.0" prefWidth="468.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VistaControlador">
+   <children>
+      <Pane prefHeight="663.0" prefWidth="468.0">
+         <children>
+            <Button id="btnLogIn" fx:id="btnLogIn" layoutX="87.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#hola" prefHeight="32.0" prefWidth="293.0" text="Iniciar sesión" textAlignment="CENTER">
+               <font>
+                  <Font name="Bookman Old Style" size="14.0" />
+               </font>
+            </Button>
+            <PasswordField id="txtPassword" fx:id="txtPassword" layoutX="86.0" layoutY="398.0" prefHeight="34.0" prefWidth="295.0" promptText="Contraseña">
+               <font>
+                  <Font name="Bookman Old Style" size="14.0" />
+               </font>
+               <effect>
+                  <ColorAdjust />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </PasswordField>
+            <TextField id="txtUser" fx:id="txtUser" layoutX="86.0" layoutY="318.0" prefHeight="34.0" prefWidth="295.0" promptText="Usuario">
+               <font>
+                  <Font name="Bookman Old Style" size="14.0" />
+               </font>
+               <effect>
+                  <ColorAdjust />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Hyperlink fx:id="btnRegister" layoutX="218.0" layoutY="564.0" onAction="#irRegistro" text="Registrarse" />
+            <Label layoutX="87.0" layoutY="567.0" text="¿No tienes cuenta aún?" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

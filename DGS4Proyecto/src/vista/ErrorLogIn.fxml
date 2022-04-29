@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="148.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ErrorControlador">
+   <children>
+      <DialogPane fx:id="errorDatos" contentText="Datos ingresados inválidos, tenga en cuenta las indicaciones (Puede ser que ese usuario ya exsista)" headerText="Error inicio de sesión" layoutX="6.0" layoutY="14.0" prefHeight="120.0" prefWidth="378.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Blend />
+         </effect>
+      </DialogPane>
+   </children>
+</AnchorPane>
