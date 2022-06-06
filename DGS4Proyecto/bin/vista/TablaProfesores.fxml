@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="492.0" prefWidth="760.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.ProfesoresControlador">
+  <children>
+    <TableView fx:id="tblProfesores" layoutX="27.0" layoutY="57.0" onMouseClicked="#seleccionar" prefHeight="365.0" prefWidth="704.0">
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="208.0" text="Nombre" fx:id="colNombre" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="289.0" text="Apellido" fx:id="colApellido" />
+        <TableColumn maxWidth="5000.0" minWidth="0.0" prefWidth="207.0" text="Asignatura" fx:id="colAsignatura" />
+      </columns>
+    </TableView>
+    <Button id="btnModificar" fx:id="btnAgregar" layoutX="220.0" layoutY="437.0" mnemonicParsing="false" onAction="#agregar" prefWidth="144.0" text="Agregar Profesor" />
+    <Label alignment="BOTTOM_CENTER" layoutX="276.0" layoutY="23.0" text="Lista de Profesores">
+      <font>
+        <Font size="25.0" />
+      </font>
+    </Label>
+    <Button fx:id="btnModificar" layoutX="411.0" layoutY="437.0" mnemonicParsing="false" onAction="#modificar" prefWidth="144.0" text="Modificar" />
+    <Button id="btnModificar" fx:id="btnEliminar" layoutX="587.0" layoutY="437.0" mnemonicParsing="false" onAction="#eliminar" prefWidth="144.0" text="Eliminar" />
+    <Button id="btnModificar" fx:id="btnPerfil" layoutX="27.0" layoutY="437.0" mnemonicParsing="false" onAction="#verPerfil" prefWidth="144.0" text="Ver Perfil" />
+  </children>
+</AnchorPane>

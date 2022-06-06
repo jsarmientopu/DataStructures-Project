@@ -5,4 +5,5 @@ module DGS4Proyecto {
 	requires javafx.fxml;
 	requires javafx.graphics;
 	requires javafx.controls;
+	requires java.logging;
 }

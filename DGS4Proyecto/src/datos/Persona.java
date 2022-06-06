@@ -10,6 +10,7 @@ public class Persona implements Serializable{
 	private String contrasenia;
 	private Date fechaNacimiento;
 	private long numeroContacto;
+	private Queue<Tarea> Tareas;
 	
 	public Persona(String nombre, String usuario, String contrasenia, Date fechaNacimiento, long numeroContacto) {
 		this.nombre = nombre;
@@ -17,8 +18,9 @@ public class Persona implements Serializable{
 		this.contrasenia = contrasenia;
 		this.fechaNacimiento = fechaNacimiento;
 		this.numeroContacto = numeroContacto;
+		this.Tareas = new Queue<Tarea>();
 	}
-	
+		
 	public String getNombre() {
 		return nombre;
 	}
@@ -48,6 +50,12 @@ public class Persona implements Serializable{
 	}
 	public void setNumeroContacto(long numeroContacto) {
 		this.numeroContacto = numeroContacto;
+	}
+	public Queue<Tarea> getTareas() {
+		return Tareas;
+	}
+	public void setTareas(Queue<Tarea> tareas) {
+		Tareas = tareas;
 	}
 
 	@Override

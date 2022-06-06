@@ -1,13 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="546.0" prefWidth="790.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18">
+<AnchorPane prefHeight="546.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AppControlador">
    <children>
-      <BorderPane layoutX="243.0" layoutY="122.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="btna" layoutX="443.0" layoutY="248.0" mnemonicParsing="false" text="Button" />
+      <FlowPane layoutX="16.0" layoutY="14.0" prefHeight="116.0" prefWidth="759.0">
+         <children>
+            <ImageView fitHeight="124.0" fitWidth="311.0" pickOnBounds="true" preserveRatio="true">
+               <FlowPane.margin>
+                  <Insets right="30.0" />
+               </FlowPane.margin>
+               <image>
+                  <Image url="@UNassistant-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblUser" prefHeight="54.0" prefWidth="378.0" text="Usuario:&#10;&#9;Label">
+               <font>
+                  <Font name="Dubai Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </FlowPane>
+      <Pane layoutX="36.0" layoutY="112.0" prefHeight="402.0" prefWidth="718.0">
+         <children>
+            <GridPane alignment="CENTER" layoutX="8.0" prefHeight="402.0" prefWidth="169.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.79998779296875" minWidth="10.0" prefWidth="15.19998550415039" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.2000144958496" minWidth="10.0" prefWidth="247.2000144958496" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="124.8000244140625" minHeight="10.0" prefHeight="49.00000610351563" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="243.19998779296876" minHeight="0.0" prefHeight="63.79998779296874" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="309.4" minHeight="10.0" prefHeight="63.79999389648438" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="309.4" minHeight="10.0" prefHeight="226.20000610351565" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="btna" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#irTarea" prefHeight="34.0" prefWidth="105.0" text="Tareas" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Wingdings 3" size="17.0" />
+                     </font>
+                  </Button>
+                  <Label text="Funcionalidades" textFill="#2708b1" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Arial Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnProfesores" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#irProfesores" prefHeight="34.0" prefWidth="105.0" text="Profesores" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Wingdings 3" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+            <Pane layoutX="460.0" layoutY="14.0" prefHeight="99.0" prefWidth="244.0">
+               <children>
+                  <Label fx:id="lblProx" layoutY="1.0" prefHeight="26.0" prefWidth="244.0" text="!Proxima tarea¡" textFill="#ff0505">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTarea" layoutX="25.0" layoutY="27.0" prefHeight="20.0" prefWidth="218.0" text="Label" />
+                  <Label fx:id="lblDescripcion" alignment="TOP_LEFT" contentDisplay="RIGHT" layoutX="44.0" layoutY="50.0" prefHeight="54.0" prefWidth="205.0" text="Label" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

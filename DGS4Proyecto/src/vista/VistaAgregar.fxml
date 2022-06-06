@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="457.0" prefWidth="291.9999000000025" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.VistaAgregarControlador">
+  <children>
+    <Label layoutX="46.0" layoutY="64.0" text="Nombre" />
+    <Label layoutX="46.0" layoutY="155.0" text="Apellido" />
+    <Label layoutX="46.0" layoutY="242.0" text="Asignatura" />
+    <TextField fx:id="txtNombre" layoutX="46.0" layoutY="99.0" prefWidth="200.0" />
+    <TextField fx:id="txtApellido" layoutX="46.0" layoutY="200.0" prefWidth="200.0" />
+    <TextField fx:id="txtAsignatura" layoutX="46.0" layoutY="297.0" prefWidth="200.0" />
+    <Button id="btnAgregar" fx:id="btnGuardar" layoutX="106.0" layoutY="358.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+    <Button id="btnAgregar" fx:id="btnSalir" layoutX="106.0" layoutY="398.0" mnemonicParsing="false" onAction="#salir" prefWidth="80.0" text="Salir" />
+  </children>
+</AnchorPane>

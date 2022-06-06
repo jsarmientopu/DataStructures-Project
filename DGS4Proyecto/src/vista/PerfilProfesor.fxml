@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="695.0" prefWidth="777.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.PerfilProfesorControlador">
+  <children>
+    <ImageView fitHeight="69.0" fitWidth="69.0" layoutX="354.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../Imagenes/Logotipo_de_la_Universidad_Nacional_de_Colombia.svg.png" />
+      </image>
+    </ImageView>
+    <Label fx:id="labelNombre" alignment="BOTTOM_CENTER" layoutX="272.0" layoutY="105.0" text="Nombre Del Profesor" textAlignment="CENTER">
+      <font>
+        <Font size="25.0" />
+      </font>
+    </Label>
+    <Line endX="627.0" endY="-4.0" layoutX="127.0" layoutY="218.0" startX="-100.0" />
+    <Label layoutX="50.0" layoutY="140.0" text="Asignatura:" />
+    <Label fx:id="labelAsignatura" layoutX="60.0" layoutY="160.0" text="Asignatura" underline="true" />
+    <Label fx:id="labelResena" alignment="TOP_LEFT" layoutX="26.0" layoutY="275.0" prefHeight="360.0" prefWidth="729.0" text="" textAlignment="LEFT" wrapText="true" />
+    <Text layoutX="32.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reseñas del profesor:">
+      <font>
+        <Font size="18.0" />
+      </font>
+    </Text>
+    <Button fx:id="btnAgregarR" layoutX="96.0" layoutY="635.0" mnemonicParsing="false" onAction="#agregarResena" prefWidth="183.0" text="Agregar Reseña" />
+    <Button fx:id="btnCerrar" layoutX="506.0" layoutY="635.0" mnemonicParsing="false" onAction="#cerrar" prefWidth="183.0" text="Cerrar" />
+  </children>
+</AnchorPane>

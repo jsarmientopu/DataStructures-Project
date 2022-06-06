@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
+import logica.logica;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,17 +15,13 @@ import javafx.scene.control.DialogPane;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
-
 import datos.ArrayList;
-import datos.Emprendedor;
 import datos.Persona;
-import datos.Usuario;
 
 
 public class VistaControlador implements Initializable{
@@ -38,7 +35,7 @@ public class VistaControlador implements Initializable{
 	private ArrayList<Persona> personasRegistradas;
 	
 	public  void setPersonasRegistradas() {
-		ArrayList<Persona> personasRegistradas = new ArrayList<Persona>();
+		ArrayList<Persona> personasRegistradas = logica.leer();
 		Date fechaJuan = new Date(121, 4, 6);
 		Persona Juan = new Persona("Juan Cardenas", "JuanCardenas123", "PKS896",fechaJuan, 313326954);
 		Persona Juan1 = new Persona("Juan Cardenas", "juan1", "juan123",fechaJuan, 313326954l);
@@ -68,19 +65,18 @@ public class VistaControlador implements Initializable{
 		String password = txtPassword.getText();
 		String user = txtUser.getText();
 		boolean validez = false;
+		Persona user1 = null;
 		
-		for (int i = 0; i<personasRegistradas.size(); i++) {
-			if(personasRegistradas.get(i).getUsuario().equals(user) && personasRegistradas.get(i).getContrasenia().equals(password)) {
+		for (int i = 0; i<this.personasRegistradas.size(); i++) {
+			if(this.personasRegistradas.get(i).getUsuario().equals(user) && this.personasRegistradas.get(i).getContrasenia().equals(password)) {
+				user1 = this.personasRegistradas.get(i);
 				validez = true;
 				break;
 			}
 		}
-		for (int i = 0; i<personasRegistradas.size(); i++) {
-			System.out.print(personasRegistradas.get(i).getUsuario());
-		}
 		
 		if(validez) {
-			ponerApp();
+			ponerApp(user1);
 		}else {
 			try {
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/ErrorLogIn.fxml"));
@@ -108,7 +104,7 @@ public class VistaControlador implements Initializable{
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Registro.fxml"));
 			Parent root = loader.load();
 			RegistroControlador controlador = loader.getController();
-			controlador.setPersonasRegistradas(personasRegistradas);
+			controlador.setPersonasRegistradas(this.personasRegistradas);
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setScene(scene);
@@ -123,12 +119,14 @@ public class VistaControlador implements Initializable{
 	}
 	
 	
-	public void ponerApp() {
+	public void ponerApp(Persona user) {
 		
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/App.fxml"));
 			Parent root = loader.load();
 			AppControlador controlador = loader.getController();
+			controlador.setPersonasRegistradas(this.personasRegistradas);
+			controlador.setUser(user);
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setScene(scene);
@@ -147,7 +145,6 @@ public class VistaControlador implements Initializable{
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Vista.fxml"));
 			Parent root = loader.load();
-			VistaControlador controlador = loader.getController();
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setScene(scene);
@@ -161,6 +158,7 @@ public class VistaControlador implements Initializable{
 	 @Override
 	 public void initialize(URL url, ResourceBundle rb) {
 		 //TODO
+		 setPersonasRegistradas();
 	 }
 
 	

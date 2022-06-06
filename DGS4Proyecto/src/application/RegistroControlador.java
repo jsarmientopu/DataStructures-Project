@@ -2,10 +2,10 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 import datos.ArrayList;
 import datos.Persona;
-import datos.Usuario;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +15,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import logica.logica;
 
 public class RegistroControlador implements Initializable{
 
@@ -51,12 +53,32 @@ public class RegistroControlador implements Initializable{
 			}
 		}
 		if(validez) {
-			irRegistro2();
+			Persona user1 =registrar(password, user, name, apellido, contacto);
+			ponerApp(user1);
 		}else {
 			ponerError();
 		}
 		
 	}
+	
+    public Persona registrar( String password, String user, String name, String apellido, String contacto ) {
+    	
+		int identificador = personasRegistradas.size();
+		String nombreCompleto = name + apellido;
+		Date dateUser = new Date();
+		String[] date1 = date.getValue().toString().split("-");
+		dateUser.setYear(Integer.valueOf(date1[0])-1900);
+		dateUser.setMonth(Integer.valueOf(date1[1]));
+		dateUser.setDate(Integer.valueOf(date1[2]));
+		Persona[] usuarios = new Persona[identificador+1];
+		usuarios[identificador] = new Persona(nombreCompleto, user, password, dateUser, Long.parseLong(contacto));
+		
+		personasRegistradas.add(usuarios[identificador]);
+		
+		logica.guardarInfo(personasRegistradas);
+		
+		return usuarios[identificador];
+    }
 	
 	public void irRegistro2(){
 		try {
@@ -92,6 +114,44 @@ public class RegistroControlador implements Initializable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public void ponerApp(Persona user) {
+		
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/App.fxml"));
+			Parent root = loader.load();
+			AppControlador controlador = loader.getController();
+			controlador.setPersonasRegistradas(this.personasRegistradas);
+			controlador.setUser(user);
+			Scene scene = new Scene(root);
+			Stage stage = new Stage();
+			stage.setScene(scene);
+			stage.setOnCloseRequest(e->ponerVista());
+			stage.show();
+			Stage myStage = (Stage) this.btnCont.getScene().getWindow();
+			myStage.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void ponerVista() {
+		
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Vista.fxml"));
+			Parent root = loader.load();
+			Scene scene = new Scene(root);
+			Stage stage = new Stage();
+			stage.setScene(scene);
+			stage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	@Override

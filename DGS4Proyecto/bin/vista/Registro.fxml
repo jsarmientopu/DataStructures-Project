@@ -47,7 +47,7 @@
             <VBox prefHeight="88.0" prefWidth="272.0" spacing="5.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <children>
                   <TextField fx:id="txtName" />
-                  <Label text="Longuitud maxima y eso" />
+                  <Label text="Longuitud maxima 20 - mínima 3" />
                </children>
                <GridPane.margin>
                   <Insets top="15.0" />
@@ -56,7 +56,7 @@
             <VBox prefHeight="88.0" prefWidth="272.0" spacing="5.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <children>
                   <TextField fx:id="txtApellido" prefHeight="26.0" prefWidth="366.0" />
-                  <Label text="Longuitud maxima y eso">
+                  <Label text="Longuitud maxima 20- mínima 3">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -79,7 +79,7 @@
             <VBox prefHeight="88.0" prefWidth="272.0" spacing="5.0" GridPane.columnIndex="3" GridPane.rowIndex="8">
                <children>
                   <TextField fx:id="txtUser" />
-                  <Label text="Longuitud maxima y eso">
+                  <Label text="Longuitud maxima 10- mínima 3">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -97,7 +97,7 @@
             <VBox prefHeight="88.0" prefWidth="272.0" spacing="5.0" GridPane.columnIndex="3" GridPane.rowIndex="9">
                <children>
                   <TextField fx:id="txtPassword" />
-                  <Label text="Longuitud maxima y eso">
+                  <Label text="Longuitud maxima 15- mínima 3">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -115,7 +115,7 @@
             <VBox prefHeight="88.0" prefWidth="272.0" spacing="5.0" GridPane.columnIndex="3" GridPane.rowIndex="10">
                <children>
                   <TextField fx:id="txtPassword2" />
-                  <Label text="Longuitud maxima y eso">
+                  <Label text="Longuitud maxima 15 - mínima 3">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -150,7 +150,7 @@
                         <Insets />
                      </VBox.margin>
                   </TextField>
-                  <Label text="Longuitud maxima y eso">
+                  <Label text="Longuitud maxima 13 - mínima 10">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>

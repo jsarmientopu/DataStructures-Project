@@ -7,6 +7,8 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -44,6 +46,11 @@
             </TextField>
             <Hyperlink fx:id="btnRegister" layoutX="218.0" layoutY="564.0" onAction="#irRegistro" text="Registrarse" />
             <Label layoutX="87.0" layoutY="567.0" text="¿No tienes cuenta aún?" />
+            <ImageView fitHeight="298.0" fitWidth="324.0" layoutX="95.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@UNassistant__1_-removebg-preview.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>

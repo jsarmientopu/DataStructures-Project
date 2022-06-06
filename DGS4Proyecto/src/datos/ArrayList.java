@@ -1,8 +1,9 @@
 package datos;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class ArrayList<T> {
+public class ArrayList<T> implements Serializable{
 	
 	protected Node head;
 	protected int size;
