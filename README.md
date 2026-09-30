@@ -1,10 +1,19 @@
 # DataStructures-Project
-Repositorio para almacenar el proyecto de estructuras de datos, Grupo14
-El proyecto se realiza en el lenguaje java, con ayuda de las librerias javafx y el programa scene builder.
-El archivo del proyecto se divide en tres paquetes:
--application
-  Controladores de cada interfaz gráfica y lógica del programa
--Datos
-  Clases necesarias en el proyecto, además las estructuras de datos usadas
--Vista
-  Interfaz gráfica (cada una de las ventanas)
+
+Repository for the **Data Structures course project**, developed by **Group 14**.
+
+The project is developed in **Java**, using **JavaFX** for the graphical user interface and **Scene Builder** for designing the application's interfaces.
+
+## Project Structure
+
+The project is organized into three main packages:
+
+* **`application`**
+  Contains the controllers for each graphical interface, as well as the main application logic.
+
+* **`Datos`**
+  Contains the classes required by the project, including the data structures implemented and used throughout the application.
+
+* **`Vista`**
+  Contains the graphical user interface components, including the different windows of the application.
+
